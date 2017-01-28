@@ -1,20 +1,30 @@
-## Fast Style Transfer in [TensorFlow](https://github.com/tensorflow/tensorflow)
+# Artistic Style Transfer
 
-Add styles from famous paintings to any photo in a fraction of a second! [You can even style videos!](#video-stylization)
+This fork of [Fast Style Transfer](https://github.com/lengstrom/fast-style-transfer) is structured as a presentation tool to showcase advanced technology.
 
-<p align = 'center'>
-<img src = 'examples/style/udnie.jpg' height = '246px'>
-<img src = 'examples/content/stata.jpg' height = '246px'>
-<a href = 'examples/results/stata_udnie.jpg'><img src = 'examples/results/stata_udnie_header.jpg' width = '627px'></a>
-</p>
-<p align = 'center'>
-It takes 100ms on a 2015 Titan X to style the MIT Stata Center (1024×680) like Udnie, by Francis Picabia.
-</p>
+## **The Great Wave off Kanagawa** by Katsushika Hokusai
+![The Great Wave off Kanagawa by Katsushika Hokusai](/examples/style-library/wave.jpg)
 
-Our implementation is based off of a combination of Gatys' [A Neural Algorithm of Artistic Style](https://arxiv.org/abs/1508.06576), Johnson's [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](http://cs.stanford.edu/people/jcjohns/eccv16/), and Ulyanov's [Instance Normalization](https://arxiv.org/abs/1607.08022). 
 
-## Video Stylization 
-Here we transformed every frame in a video, then combined the results. [Click to go to the full demo on YouTube!](https://www.youtube.com/watch?v=xVJwwWQlQ1o) The style here is Udnie, as above.
+## **A Portrait of Châteauneuf**, our Beautiful Cat
+![A Portrait of Châteauneuf, our Beautiful Cat](/examples/input/chateauneuf.jpg)
+
+## A Transfer of The Wave's Style onto Châteauneuf's Portrait
+
+![A Transfer of The Wave's Style onto Châteauneuf's Portrait](/examples/output/chateauneuf-wave.jpg)
+
+### Important Points for the Curious
+
+* In order to achieve style transfer, the computer network that did most of the work spent a total of 4 to 6 hours with The Great Wave off Kanagawa.
+* During that time, the network was instructed to generate checkpoint files which were used to evaluate it's progress.
+* Eventually a checkpoint file demonstrated the network's new ability to transfer style.
+* With that checkpoint file, a style transfer only takes 5 to 10 seconds on my 7 year-old computer.
+* The checkpoint file is 100% reusable. There are 6 of them here, representing deep neural network training on 6 different pieces of art.
+* The style can also be transferred onto video!
+
+
+## Video Stylization
+Here every frame in a video is transformed, then recombined. [Click to go to the full demo on YouTube!](https://www.youtube.com/watch?v=xVJwwWQlQ1o) The style here is Udnie.
 <div align = 'center'>
      <a href = 'https://www.youtube.com/watch?v=xVJwwWQlQ1o'>
         <img src = 'examples/results/fox_udnie.gif' alt = 'Stylized fox video. Click to go to YouTube!' width = '800px' height = '400px'>
@@ -28,7 +38,7 @@ We added styles from various paintings to a photo of Chicago. Click on thumbnail
 <div align='center'>
 <img src = 'examples/content/chicago.jpg' height="200px">
 </div>
-     
+
 <div align = 'center'>
 <a href = 'examples/style/wave.jpg'><img src = 'examples/thumbs/wave.jpg' height = '200px'></a>
 <img src = 'examples/results/chicago_wave.jpg' height = '200px'>
@@ -87,6 +97,11 @@ You will need the following to run the above:
   - All the required NVIDIA software to run TF on a GPU (cuda, etc)
 - ffmpeg 3.1.3 if you want to stylize video
 
+This implementation is based off:
+  * Gatys' [A Neural Algorithm of Artistic Style](https://arxiv.org/abs/1508.06576)
+  * Johnson's [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](http://cs.stanford.edu/people/jcjohns/eccv16/)
+  * Ulyanov's [Instance Normalization](https://arxiv.org/abs/1607.08022)
+
 ### Citation
 ```
   @misc{engstrom2016faststyletransfer,
@@ -98,7 +113,7 @@ You will need the following to run the above:
   }
 ```
 ### Attributions/Thanks
-- This project could not have happened without the advice (and GPU access) given by [Anish Athalye](http://www.anishathalye.com/). 
+- This project could not have happened without the advice (and GPU access) given by [Anish Athalye](http://www.anishathalye.com/).
   - The project also borrowed some code from Anish's [Neural Style](https://github.com/anishathalye/neural-style/)
 - Some readme/docs formatting was borrowed from Justin Johnson's [Fast Neural Style](https://github.com/jcjohnson/fast-neural-style)
 - The image of the Stata Center at the very beginning of the README was taken by [Juan Paulo](https://juanpaulo.me/)
