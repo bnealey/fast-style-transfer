@@ -27,7 +27,7 @@ This fork of [Fast Style Transfer](https://github.com/lengstrom/fast-style-trans
 Here every frame in a video is transformed, then recombined. [Click to go to the full demo on YouTube!](https://www.youtube.com/watch?v=xVJwwWQlQ1o) The style here is Udnie.
 <div align = 'center'>
      <a href = 'https://www.youtube.com/watch?v=xVJwwWQlQ1o'>
-        <img src = 'examples/results/fox_udnie.gif' alt = 'Stylized fox video. Click to go to YouTube!' width = '800px' height = '400px'>
+        <img src = '/examples/output/fox_udnie.gif' alt = 'Stylized fox video. Click to go to YouTube!' width = '800px' height = '400px'>
      </a>
 </div>
 
@@ -36,29 +36,29 @@ See how to generate these videos [here](#stylizing-video)!
 ## Image Stylization
 We added styles from various paintings to a photo of Chicago. Click on thumbnails to see full applied style images.
 <div align='center'>
-<img src = 'examples/content/chicago.jpg' height="200px">
+<img src = 'examples/input/kitttty.jpg' height="200px">
 </div>
 
 <div align = 'center'>
-<a href = 'examples/style/wave.jpg'><img src = 'examples/thumbs/wave.jpg' height = '200px'></a>
-<img src = 'examples/results/chicago_wave.jpg' height = '200px'>
-<img src = 'examples/results/chicago_udnie.jpg' height = '200px'>
-<a href = 'examples/style/udnie.jpg'><img src = 'examples/thumbs/udnie.jpg' height = '200px'></a>
+<a href = 'examples/style-library/wave.jpg'><img src = 'examples/style-library/wave.jpg' height = '200px'></a>
+<img src = 'examples/results/kitttty-wave.jpg' height = '200px'>
+<img src = 'examples/results/kitttty-udnie.jpg' height = '200px'>
+<a href = 'examples/style-library/udnie.jpg'><img src = 'examples/style-library/udnie.jpg' height = '200px'></a>
 <br>
-<a href = 'examples/style/rain_princess.jpg'><img src = 'examples/thumbs/rain_princess.jpg' height = '200px'></a>
-<img src = 'examples/results/chicago_rain_princess.jpg' height = '200px'>
-<img src = 'examples/results/chicago_la_muse.jpg' height = '200px'>
-<a href = 'examples/style/la_muse.jpg'><img src = 'examples/thumbs/la_muse.jpg' height = '200px'></a>
+<a href = 'examples/style-library/rain_princess.jpg'><img src = 'examples/style-library/rain_princess.jpg' height = '200px'></a>
+<img src = 'examples/results/kitttty-rain_princess.jpg' height = '200px'>
+<img src = 'examples/results/kitttty-la_muse.jpg' height = '200px'>
+<a href = 'examples/style-library/la_muse.jpg'><img src = 'examples/style-library/la_muse.jpg' height = '200px'></a>
 
 <br>
-<a href = 'examples/style/the_shipwreck_of_the_minotaur.jpg'><img src = 'examples/thumbs/the_shipwreck_of_the_minotaur.jpg' height = '200px'></a>
-<img src = 'examples/results/chicago_wreck.jpg' height = '200px'>
-<img src = 'examples/results/chicago_the_scream.jpg' height = '200px'>
-<a href = 'examples/style/the_scream.jpg'><img src = 'examples/thumbs/the_scream.jpg' height = '200px'></a>
+<a href = 'examples/style-library/the_shipwreck_of_the_minotaur.jpg'><img src = 'examples/style-library/the_shipwreck_of_the_minotaur.jpg' height = '200px'></a>
+<img src = 'examples/results/kitttty-wreck.jpg' height = '200px'>
+<img src = 'examples/results/kitttty-the_scream.jpg' height = '200px'>
+<a href = 'examples/style-library/the_scream.jpg'><img src = 'examples/style-library/the_scream.jpg' height = '200px'></a>
 </div>
 
 ## Implementation Details
-Our implementation uses TensorFlow to train a fast style transfer network. We use roughly the same transformation network as described in Johnson, except that batch normalization is replaced with Ulyanov's instance normalization, and the scaling/offset of the output `tanh` layer is slightly different. We use a loss function close to the one described in Gatys, using VGG19 instead of VGG16 and typically using "shallower" layers than in Johnson's implementation (e.g. we use `relu1_1` rather than `relu1_2`). Empirically, this results in larger scale style features in transformations.
+This implementation uses TensorFlow to train a fast style transfer network. Roughly the same transformation network as described in Johnson is used, except that batch normalization is replaced with Ulyanov's instance normalization, and the scaling/offset of the output `tanh` layer is slightly different. This uses a loss function close to the one described in Gatys, using VGG19 instead of VGG16 and typically using "shallower" layers than in Johnson's implementation (e.g. we use `relu1_1` rather than `relu1_2`). Empirically, this results in larger scale style features in transformations.
 
 ## Documentation
 ### Training Style Transfer Networks
