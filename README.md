@@ -37,9 +37,9 @@ See how to generate these videos [here](#stylizing-video)!
 I added styles from various paintings to this photo of Kitttty. There are many more examples of stylization I did in /examples/output/
 
 <div align='center'>
-<img src = 'examples/input/kitttty.jpg' height="200px">
+<img src = 'examples/input/kitttty.JPG' height="200px">
 </div>
-<br>
+
 <div align = 'center'>
 <a href = 'examples/style-library/wave.jpg'><img src = 'examples/style-library/wave.jpg' height = '200px'></a>
 <img src = 'examples/output/kitttty-wave.jpg' height = '200px'>
